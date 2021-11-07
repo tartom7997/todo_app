@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       delete '/todos/destroy_all', to: 'todos#destroy_all'
+      # %i 要素がシンボルの配列を作る。シンボルとは[: ]
       resources :todos, only: %i[index show create update destroy]
     end
   end
